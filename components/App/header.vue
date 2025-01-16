@@ -1,7 +1,7 @@
 <template>
     <header class="lg:px-16 px-4 flex flex-wrap items-center py-2 shadow-md shadow-rose-500">
         <div class="flex-1 flex justify-between items-center">
-            <img class="w-[3.5rem] hidden xl:block" src="~/assets/images/Logo.png" alt="Logo" />
+            <img class="w-[3.5rem] hidden xl:block" src="/images/Logo.png" alt="Logo" />
         </div>
         <button @click="toggleMenu" class="cursor-pointer md:hidden block text-black bg-white">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">

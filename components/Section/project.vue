@@ -45,9 +45,6 @@
 </template>
 
 <script setup>
-import soopercutImage from '@/assets/images/soopercut.png';
-import auihImage from '@/assets/images/auih.png';
-import onbengImage from '@/assets/images/onbeng.png';
 
 const filters = ref([
     { name: 'All', value: '*' },
@@ -60,21 +57,21 @@ const activeFilter = ref('*');
 
 const portfolio = ref([
     {
-        image: soopercutImage,
+        image: '/images/soopercut.png',
         title: 'Soopercuts Barber Service System',
         description: 'A comprehensive barber service management system developed using the Laravel framework and MySQL database to streamline operations, enhance customer experience, and efficiently manage services and appointments.',
         category: ['web'],
         language: ['HTML', 'CSS', 'Javascript', 'PHP', 'Laravel', 'MySQL'],
     },
     {
-        image: auihImage,
+        image: "/images/auih.png",
         title: 'Cashier System at AUIH+ using Odoo',
         description: 'The cashier system at AUIH+ leverages Odoo and Python to streamline transactions, manage stock, integrate payments, and provide real-time reports, ensuring efficiency, accuracy, and seamless user experience.',
         category: ['web'],
         language: ['Python', 'Odoo'],
     },
     {
-        image: onbengImage,
+        image: "/images/onbeng.png",
         title: 'UI/UX OnBeng Apps',
         description: 'The UI/UX design for OnBeng App, an online workshop platform, is created with Figma to ensure seamless navigation, efficient booking, and a user-friendly experience with a modern, intuitive interface.',
         category: ['ui/ux'],
