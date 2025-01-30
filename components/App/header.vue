@@ -1,5 +1,5 @@
 <template>
-    <header class="lg:px-16 px-4 flex flex-wrap items-center py-2 shadow-md shadow-rose-500">
+    <header :class="['lg:px-16 px-4 flex flex-wrap items-center py-4 shadow-md shadow-rose-500', { 'hidden': isHeaderHidden }]">
         <div class="flex-1 flex justify-between items-center">
             <img class="w-[3.5rem] hidden xl:block" src="/images/Logo.png" alt="Logo" />
         </div>
@@ -39,9 +39,12 @@
 </template>
 
 <script setup>
+import { ref, onMounted, onBeforeUnmount } from "vue";
 
 const isMenuOpen = ref(false);
 const activeSection = ref("about");
+const lastScrollY = ref(0);
+const isHeaderHidden = ref(false);
 
 const toggleMenu = () => {
     isMenuOpen.value = !isMenuOpen.value;
@@ -49,11 +52,22 @@ const toggleMenu = () => {
 
 const handleMenuClick = (section) => {
     activeSection.value = section;
-    isMenuOpen.value = false; // Menutup menu
+    isMenuOpen.value = false; // Close the menu
 };
 
-// Deteksi scroll untuk menentukan bagian aktif
+// Detect scroll to determine active section and header visibility
 const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+
+    // Hide header on scroll down, show on scroll up
+    if (currentScrollY > lastScrollY.value) {
+        isHeaderHidden.value = true; // Scrolling down
+    } else {
+        isHeaderHidden.value = false; // Scrolling up
+    }
+    lastScrollY.value = currentScrollY;
+
+    // Update active section
     const sections = ["about", "education", "experience", "projects", "contact"];
     sections.forEach((section) => {
         const element = document.getElementById(section);
@@ -66,9 +80,17 @@ const handleScroll = () => {
     });
 };
 
-// Tambahkan event listener untuk scroll
+// Add event listener for scroll
 onMounted(() => {
     window.addEventListener("scroll", handleScroll);
 });
 
+// Clean up the event listener
+onBeforeUnmount(() => {
+    window.removeEventListener("scroll", handleScroll);
+});
 </script>
+
+<style scoped>
+/* Add any additional styles here */
+</style>

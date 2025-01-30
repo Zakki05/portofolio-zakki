@@ -3,6 +3,7 @@
         <SectionBanner></SectionBanner>
         <SectionExperience></SectionExperience>
         <SectionProject></SectionProject>
+        <SectionContact></SectionContact>
     </div>
 </template>
 
