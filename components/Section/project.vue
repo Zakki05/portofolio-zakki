@@ -45,9 +45,9 @@
 </template>
 
 <script setup>
-import soopercutImage from '@/public/images/soopercut.png';
-import auihImage from '@/public/images/auih.png';
-import onbengImage from '@/public/images/onbeng.png';
+import soopercutImage from '/images/soopercut.png';
+import auihImage from '/images/auih.png';
+import onbengImage from '/images/onbeng.png';
 
 const filters = ref([
     { name: 'All', value: '*' },

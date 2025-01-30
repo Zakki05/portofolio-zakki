@@ -5,7 +5,8 @@ export default defineNuxtConfig({
   ],
 
   app: {
-    baseURL: '/portofolio-zakki/'
+    baseURL: '/portofolio-zakki/',
+    buildAssetsDir: '/assets/'
   },
 
   compatibilityDate: '2025-01-16'
