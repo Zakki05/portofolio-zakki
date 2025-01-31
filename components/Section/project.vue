@@ -53,6 +53,7 @@ import mini2 from '/images/mini2.png';
 import mini3 from '/images/mini3.png';
 import zakkipedia from '/images/zakkipedia.png';
 import eticketing from '/images/eticketing.png';
+import petshop from '/images/petshop.png';
 
 const filters = ref([
     { name: 'All', value: '*' },
@@ -72,7 +73,7 @@ const portfolio = ref([
         language: ['Vue', 'Nuxt', 'Tailwind', 'PHP', 'Laravel', 'MySQL'],
     },
     {
-        image: soopercutImage,
+        image: petshop,
         title: 'R4 Petshop & Clinic Inventory and Service Information System',
         description: 'An inventory and service management information system for petshops and clinics developed as a final project. The system simplifies the management of services, product stock, recording sales, purchases, losses, and expenses as well as improving operational efficiency and customer experience.',
         category: ['web'],
