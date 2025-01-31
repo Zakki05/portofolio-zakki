@@ -45,6 +45,14 @@ const isMenuOpen = ref(false);
 const activeSection = ref("about");
 const lastScrollY = ref(0);
 const isHeaderHidden = ref(false);
+const scrollThreshold = 50; // Minimal jarak scroll sebelum header disembunyikan
+
+const sections = [
+    { id: "about", name: "About" },
+    { id: "experience", name: "Experience" },
+    { id: "projects", name: "Projects" },
+    { id: "contact", name: "Contact" },
+];
 
 const toggleMenu = () => {
     isMenuOpen.value = !isMenuOpen.value;
@@ -52,45 +60,38 @@ const toggleMenu = () => {
 
 const handleMenuClick = (section) => {
     activeSection.value = section;
-    isMenuOpen.value = false; // Close the menu
+    isMenuOpen.value = false; // Close menu after click
 };
 
-// Detect scroll to determine active section and header visibility
 const handleScroll = () => {
     const currentScrollY = window.scrollY;
 
-    // Hide header on scroll down, show on scroll up
-    if (currentScrollY > lastScrollY.value) {
-        isHeaderHidden.value = true; // Scrolling down
-    } else {
-        isHeaderHidden.value = false; // Scrolling up
+    // Hanya sembunyikan header jika perbedaan scroll cukup besar
+    if (Math.abs(currentScrollY - lastScrollY.value) > scrollThreshold) {
+        isHeaderHidden.value = currentScrollY > lastScrollY.value; // Hide if scrolling down
     }
+
     lastScrollY.value = currentScrollY;
 
     // Update active section
-    const sections = ["about", "education", "experience", "projects", "contact"];
     sections.forEach((section) => {
-        const element = document.getElementById(section);
+        const element = document.getElementById(section.id);
         if (element) {
             const rect = element.getBoundingClientRect();
             if (rect.top >= 0 && rect.top < window.innerHeight / 2) {
-                activeSection.value = section;
+                activeSection.value = section.id;
             }
         }
     });
 };
 
-// Add event listener for scroll
+// Event listener untuk scroll
 onMounted(() => {
     window.addEventListener("scroll", handleScroll);
 });
 
-// Clean up the event listener
+// Hapus event listener saat komponen di-unmount
 onBeforeUnmount(() => {
     window.removeEventListener("scroll", handleScroll);
 });
 </script>
-
-<style scoped>
-/* Add any additional styles here */
-</style>

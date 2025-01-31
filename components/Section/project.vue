@@ -29,7 +29,7 @@
                     </div>
                 </div>
                 <h3 class="mt-4 text-xl font-semibold text-rose-800">{{ item.title }}</h3>
-                <p class="mt-2 text-gray-600">{{ item.description }}</p>
+                <p class="mt-2 text-gray-600 py-2">{{ item.description }}</p>
 
                 <!-- Language Cards -->
                 <div v-if="item.language && item.language.length" class="mt-4 flex flex-wrap gap-2">
@@ -48,6 +48,11 @@
 import soopercutImage from '/images/soopercut.png';
 import auihImage from '/images/auih.png';
 import onbengImage from '/images/onbeng.png';
+import mini1 from '/images/mini1.png';
+import mini2 from '/images/mini2.png';
+import mini3 from '/images/mini3.png';
+import zakkipedia from '/images/zakkipedia.png';
+import eticketing from '/images/eticketing.png';
 
 const filters = ref([
     { name: 'All', value: '*' },
@@ -59,6 +64,27 @@ const filters = ref([
 const activeFilter = ref('*');
 
 const portfolio = ref([
+    {
+        image: zakkipedia,
+        title: 'ZakkiPedia E-Commerce Information System',
+        description: 'An e-commerce information system developed as a coursework to simplify the management of products, transactions, and customers apparel shopping experience. Designed with a user-friendly interface, the system provides practical solutions to improve operational efficiency and customer satisfaction.',
+        category: ['web'],
+        language: ['Vue', 'Nuxt', 'Tailwind', 'PHP', 'Laravel', 'MySQL'],
+    },
+    {
+        image: soopercutImage,
+        title: 'R4 Petshop & Clinic Inventory and Service Information System',
+        description: 'An inventory and service management information system for petshops and clinics developed as a final project. The system simplifies the management of services, product stock, recording sales, purchases, losses, and expenses as well as improving operational efficiency and customer experience.',
+        category: ['web'],
+        language: ['Vue', 'Nuxt', 'Tailwind', 'PHP', 'Laravel', 'MySQL'],
+    },
+    {
+        image: eticketing,
+        title: 'Network E-Ticketing Service Information System',
+        description: 'In my internship project at PT Asli Isoae Solusine, my teammates and I developed a website-based network e-ticketing information system that enables fast and easy online ticket booking, efficient transaction management, and provides a better user experience with easier and more secure access.',
+        category: ['web'],
+        language: ['Vue', 'Nuxt', 'Tailwind', 'PHP', 'Laravel', 'MySQL'],
+    },
     {
         image: soopercutImage,
         title: 'Soopercuts Barber Service System',
@@ -75,10 +101,31 @@ const portfolio = ref([
     },
     {
         image: onbengImage,
-        title: 'UI/UX OnBeng Apps',
+        title: 'UI/UX Online Bengkel (OnBeng) Apps',
         description: 'The UI/UX design for OnBeng App, an online workshop platform, is created with Figma to ensure seamless navigation, efficient booking, and a user-friendly experience with a modern, intuitive interface.',
         category: ['ui/ux'],
         language: ['Figma'],
+    },
+    {
+        image: mini1,
+        title: 'Mini Project: Personal Bio Apps',
+        description: 'A simple application made with HTML, CSS, and JavaScript to display personal bios, such as name, contact, and self-description. This project was designed during the ID Camp x Dicoding Bootcamp to hone web development skills.',
+        category: ['mini'],
+        language: ['HTML', 'CSS', 'Javascript'],
+    },
+    {
+        image: mini2,
+        title: 'Mini Project: Todoo List Apps',
+        description: 'A simple to-do list application based on HTML, CSS, and JavaScript that allows users to add, edit, and delete tasks. Designed during the ID Camp x Dicoding Frontend Web Developer Bootcamp to practice web development skills.',
+        category: ['mini'],
+        language: ['HTML', 'CSS', 'Javascript'],
+    },
+    {
+        image: mini3,
+        title: 'Mini Project: Bookshelf Apps',
+        description: 'A simple application for managing book lists using HTML, CSS, and JavaScript. Users can add, move, and delete books from the “Unread” and “Completed” lists. Designed during ID Camp x Dicoding Bootcamp to improve web development skills.',
+        category: ['mini'],
+        language: ['HTML', 'CSS', 'Javascript'],
     },
 ]);
 
@@ -101,6 +148,9 @@ const getLanguageLogo = (language) => {
         Python: 'https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/267_Python_logo-1024.png',
         Odoo: 'https://gdm-catalog-fmapi-prod.imgix.net/ProductLogo/17efceca-38ea-4e7e-83dc-2cdd9fb0987f.png?auto=format&ixlib=react-9.0.3&w=2618',
         Figma: 'https://www.liblogo.com/img-logo/fi441fc32-figma-logo-figma-tips-and-tricks-rusmir-arnautovic-creative-designer-ux-ui.png',
+        Vue: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png',
+        Tailwind: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/1024px-Tailwind_CSS_Logo.svg.png?20230715030042',
+        Nuxt: 'https://safha.kalimah-apps.com/brand-logos/nuxt.png',
     };
     return languageLogos[language] || 'https://brandslogos.com/wp-content/uploads/images/large/figma-logo.png';
 };
