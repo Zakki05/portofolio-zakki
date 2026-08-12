@@ -56,9 +56,16 @@ import { ref, onMounted } from "vue";
 
 const resumeData = ref([
   {
+    title: "Staff Fullstack Developer",
+    company: "PT Traspac Makmur Sejahtera | Jakarta, Indonesia",
+    date: "2025 - Present",
+    description:
+      "Working as a Fullstack Developer, building web applications by developing REST APIs as backend services and implementing frontend interfaces based on Figma designs with proper state management for API integration. Managing PostgreSQL databases including table structures, triggers, views, and materialized views to improve data retrieval efficiency. Integrating geospatial features on the frontend using GeoServer, Leaflet.js, and map drawing functionality for location-based data display. Testing and validating APIs with Postman to ensure smooth connectivity between backend and mobile applications, while also handling backend logic for mobile services. Responsible for staging server deployment via SSH, including application updates and port configuration, and collaborating with the development team using SVN and GitLab for version control.",
+  },
+  {
     title: "Bachelor Degree",
     company: "Padang State Polytechnic | Padang, Indonesia",
-    date: "2024 - Present",
+    date: "2024 - 2026",
     description:
       "As a Software Engineering student, my academic activities included comprehensive studies in system maintenance, system testing, and system design for web and mobile platforms. I gained hands-on experience in utilizing cutting-edge frameworks such as Laravel, Nuxt.js, React, Flutter, and Kotlin for developing robust and scalable applications. Additionally, I honed my skills in database design, ensuring efficient and reliable data management. These experiences not only strengthened my technical expertise but also prepared me to contribute effectively to real-world IT projects with a focus on innovation and problem-solving.",
   },
