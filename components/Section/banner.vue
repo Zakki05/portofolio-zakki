@@ -41,7 +41,7 @@
         </p>
 
         <div
-          class="flex flex-wrap items-center gap-3 mt-2"
+          class="flex flex-wrap items-center justify-center gap-3 mt-2 md:justify-start"
           data-aos="fade-up"
           data-aos-delay="350"
         >

@@ -22,7 +22,7 @@
       data-aos-delay="100"
     >
       <div
-        class="inline-flex flex-wrap justify-center gap-3 p-1.5 glass-chip rounded-full"
+        class="inline-flex flex-wrap justify-center gap-3 p-1.5 glass-chip rounded-2xl sm:rounded-full"
       >
         <button
           v-for="filter in filters"
